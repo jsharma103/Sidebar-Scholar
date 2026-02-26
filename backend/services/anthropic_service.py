@@ -22,7 +22,7 @@ async def call_anthropic(api_key: str, prompt: str) -> str:
         return client.messages.create(
             model=os.getenv("ANTHROPIC_MODEL", "claude-3-haiku-20240307"),
             max_tokens=int(os.getenv("ANTHROPIC_MAX_TOKENS", "1000")),
-            system="You are a helpful assistant that explains web content clearly and concisely. Provide accurate, well-structured answers based on the context provided.",
+            system="You are a helpful assistant that explains web content clearly and concisely. Provide short, crisp, accurate, and well-structured answers based on the context provided.",
             messages=[
                 {
                     "role": "user",

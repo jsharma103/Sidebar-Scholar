@@ -39,3 +39,6 @@ User's Question: {question}
 Please provide a helpful, clear answer based on the page content. If the question is about understanding something on the page, explain it in simple terms. If asked about jargon or technical terms, provide clear definitions. Be concise but thorough. Format your response in a way that's easy to read."""
     
     return prompt
+
+
+

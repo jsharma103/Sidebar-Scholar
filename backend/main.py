@@ -55,7 +55,7 @@ class HealthResponse(BaseModel):
     status: str
     timestamp: str
 
-@app.get("/health", response_model=HealthResponse)
+@app.get("/", response_model=HealthResponse)
 async def health_check():
     """Health check endpoint"""
     return {
@@ -73,7 +73,6 @@ async def ask_question(request: QuestionRequest):
     - **api_provider**: Optional API provider ('openai' or 'anthropic')
     - **api_key**: Optional API key (uses server default if not provided)
     """
-    from datetime import datetime
     
     # Determine API provider
     provider = request.api_provider or os.getenv("DEFAULT_API_PROVIDER", "openai")
