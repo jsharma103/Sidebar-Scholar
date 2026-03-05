@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Scholar</title>
+  <link rel="stylesheet" href="sidebar.css">
+</head>
+<body>
+  <div class="sidebar-container">
+    <div class="header">
+      <h1>Sidebar Scholar</h1>
+      <button id="settingsBtn" class="settings-btn" title="Settings">⚙️</button>
+    </div>
+    
+    <div id="settingsPanel" class="settings-panel hidden">
+      <h3>Settings</h3>
+      <div class="setting-item">
+        <label for="apiProvider">API Provider (Optional):</label>
+        <select id="apiProvider">
+          <option value="">Use backend default</option>
+          <option value="openai">OpenAI</option>
+          <option value="anthropic">Anthropic (Claude)</option>
+        </select>
+        <small>Override backend's default AI provider</small>
+      </div>
+      <div class="setting-item">
+        <label for="apiKey">API Key Override (Optional):</label>
+        <input type="password" id="apiKey" placeholder="Leave empty to use backend default">
+        <small>Use your own API key instead of the backend's default</small>
+      </div>
+      <button id="saveSettings" class="save-btn">Save Settings</button>
+    </div>
+
+    <div id="chatContainer" class="chat-container">
+      <div id="messages" class="messages"></div>
+      <div id="thinking" class="thinking hidden">
+        <div class="thinking-dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="input-container">
+        <textarea 
+          id="messageInput" 
+          placeholder="Ask me anything about this page..."
+          rows="3"
+        ></textarea>
+        <button id="sendBtn" class="send-btn">Send</button>
+      </div>
+    </div>
+
+    <div id="errorMessage" class="error-message hidden"></div>
+  </div>
+  <script src="sidebar.js"></script>
+</body>
+</html>
